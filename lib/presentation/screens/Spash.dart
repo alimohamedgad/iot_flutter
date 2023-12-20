@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import 'package:rive/rive.dart' as rive;
+import 'package:untitled6/presentation/screens/auth/sign_up_screen.dart';
 import 'package:untitled6/presentation/screens/root_screen.dart';
 
 class SplashPage extends StatefulWidget {
-
   static const String route = '/splash';
   const SplashPage({super.key});
 
@@ -42,11 +42,8 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void onRiveInit(rive.Artboard artboard) {
-
     smController = rive.StateMachineController.fromArtboard(
-        artboard,
-        'boltanim${Theme.of(context).brightness.name}'
-    )!;
+        artboard, 'boltanim${Theme.of(context).brightness.name}')!;
 
     artboard.addController(smController);
 
@@ -59,11 +56,10 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-
     durationTimer = Timer(const Duration(seconds: 8), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) =>  test()),
+        MaterialPageRoute(builder: (context) => RootScreen()),
       );
     });
 

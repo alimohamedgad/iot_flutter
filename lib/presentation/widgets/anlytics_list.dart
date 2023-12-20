@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant/color_manager.dart';
+import '../../core/constant/color_manager.dart';
 import '../widgets/custom_button.dart';
 
 class RoomsScreens extends StatelessWidget {

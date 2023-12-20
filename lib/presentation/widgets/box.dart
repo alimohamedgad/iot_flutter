@@ -1,21 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled6/constant/color_manager.dart';
+
+import 'package:untitled6/core/constant/color_manager.dart';
+import 'package:untitled6/data/model/devices_model.dart';
 
 class Box extends StatefulWidget {
   Box({
-    super.key,
-    required this.name,
-    required this.switchstatus,
-    required this.url, required this.room,
-  });
+    Key? key,
+    required this.devicesModel,
+  }) : super(key: key);
 
-  final String name;
-  final String room;
-  final bool switchstatus;
-  final String url;
+  final DevicesModel devicesModel;
 
   @override
   State<Box> createState() => _BoxState();
@@ -31,28 +29,32 @@ class _BoxState extends State<Box> {
       child: Container(
         height: 100,
         width: 150,
+        padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
-            color: Color(0xFF1D1E23).withOpacity(0.7),
-            borderRadius: BorderRadius.circular(20)),
+            color: const Color(0xFF1D1E23).withOpacity(0.7),
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.white.withOpacity(0.5))),
         child: Padding(
-          padding: const EdgeInsets.only(left: 8,top: 8,),
+          padding: const EdgeInsets.only(
+            left: 8,
+            top: 8,
+          ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                widget.name,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.devicesModel.deviceName,
+                    style: const TextStyle(color: Colors.white, fontSize: 15),
+                  ),
+                  Text(
+                    widget.devicesModel.roomName,
+                    style: const TextStyle(color: Colors.grey, fontSize: 15),
+                  ),
+                ],
               ),
-                      Text(
-                        widget.room,
-                        style: TextStyle(color: Colors.grey, fontSize: 15),
-                      ),
-                    ],
-                  )),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Transform.rotate(
@@ -91,7 +93,7 @@ class _BoxState extends State<Box> {
                                 shape: BoxShape.circle,
                                 color: switchStatus
                                     ? Colors.white
-                                    : Color(0xFF1D1E23),
+                                    : const Color(0xFF1D1E23),
                               ),
                             ),
                           ),
@@ -99,17 +101,27 @@ class _BoxState extends State<Box> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   Expanded(
                       child: ClipRRect(
-                        borderRadius: BorderRadius.only(bottomRight: Radius.circular(20)),
+                          borderRadius: const BorderRadius.only(
+                              bottomRight: Radius.circular(20)),
                           child: Image.asset(
-                    widget.url,
-                  )))
+                            widget.devicesModel.imageRoom,
+                            height: 100,
+                          )))
                 ],
-              )
+              ),
+              const SizedBox(height: 10),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  '${widget.devicesModel.kwh} KWH',
+                  style: const TextStyle(color: Colors.white, fontSize: 15),
+                ),
+              ),
             ],
           ),
         ),

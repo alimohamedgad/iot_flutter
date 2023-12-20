@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:untitled6/constant/color_manager.dart';
+import 'package:untitled6/core/constant/color_manager.dart';
 import 'package:untitled6/presentation/screens/setting.dart';
 
-import '../../constant/utils.dart';
+import '../../core/constant/utils.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
@@ -55,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(height: kSpacingUnit.w * 0.5),
           Text(
             'abdoarfat924@gmail.com',
-            style:  TextStyle(color: Colors.white,fontWeight: FontWeight.w100),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w100),
           ),
           SizedBox(height: kSpacingUnit.w * 2),
           Container(
@@ -92,7 +92,6 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color(0xff141415),
-
       body: Column(
         children: <Widget>[
           SizedBox(height: kSpacingUnit.w * 5),

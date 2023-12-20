@@ -6,14 +6,16 @@ class CustomButton extends StatelessWidget {
     required this.size,
     required this.press,
     required this.text,
-
-
-    required this.color, required this.height, required this.fontesiz, required this.textColor, this.icon,
+    required this.color,
+    required this.height,
+    required this.fontesiz,
+    required this.textColor,
+    this.icon,
   }) : super(key: key);
 
   final double size;
   final double height;
-final IconData? icon;
+  final IconData? icon;
   final double fontesiz;
   final VoidCallback press;
   final String text;
@@ -23,12 +25,10 @@ final IconData? icon;
   @override
   Widget build(BuildContext context) {
     return Container(
-
       height: height,
       width: size,
       decoration: BoxDecoration(
         color: color,
-
         borderRadius: BorderRadius.circular(10),
       ),
       child: Material(
@@ -40,7 +40,11 @@ final IconData? icon;
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                if (icon != null) Icon(icon!,color: Colors.white,),
+                if (icon != null)
+                  Icon(
+                    icon!,
+                    color: Colors.white,
+                  ),
                 if (icon != null) SizedBox(width: 10),
                 Text(
                   text,
@@ -48,7 +52,6 @@ final IconData? icon;
                     color: textColor,
                     fontWeight: FontWeight.normal,
                     fontSize: fontesiz,
-
                   ),
                 )
               ],

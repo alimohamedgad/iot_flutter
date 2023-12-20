@@ -13,7 +13,6 @@ class LineChartSample2 extends StatefulWidget {
 }
 
 class _LineChartSample2State extends State<LineChartSample2> {
-
   List<List<dynamic>> devices = [
     ['Smart Light', 'Kwh', '369', Icons.lightbulb, '7 Devices'],
     ['Light', 'Kwh', '348', Icons.desktop_windows, '4 Devices'],
@@ -33,26 +32,23 @@ class _LineChartSample2State extends State<LineChartSample2> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xff141415),
-        title: Center(child: Text('Devives')),
-        leading: Icon(Icons.arrow_back_ios_new_rounded),
-        actions: [
+        backgroundColor: const Color(0xff141415),
+        title: const Center(child: Text('Devives')),
+        leading: const Icon(Icons.arrow_back_ios_new_rounded),
+        actions: const [
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: EdgeInsets.only(right: 20),
             child: Icon(Icons.search),
           )
-
         ],
-
       ),
-      backgroundColor: Color(0xff141415),
-
+      backgroundColor: const Color(0xff141415),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -63,9 +59,9 @@ class _LineChartSample2State extends State<LineChartSample2> {
                     color: Colors.grey,
                     width: 2.0,
                   ),
-                  color: Color(0xff141415),
+                  color: const Color(0xff141415),
                   borderRadius: BorderRadius.circular(20)),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
@@ -77,7 +73,16 @@ class _LineChartSample2State extends State<LineChartSample2> {
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [Text('924',style: TextStyle(color: Colors.white,fontSize: 20),), Text('Kwh Used',style: TextStyle(color: Colors.grey,fontSize: 15),)],
+                        children: [
+                          Text(
+                            '924',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          Text(
+                            'Kwh Used',
+                            style: TextStyle(color: Colors.grey, fontSize: 15),
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -96,14 +101,25 @@ class _LineChartSample2State extends State<LineChartSample2> {
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [Text('186',style: TextStyle(color: Colors.white,fontSize: 20),), Text('USD Spent',style: TextStyle(color: Colors.grey,fontSize: 15),)],
+                        children: [
+                          Text(
+                            '186',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          Text(
+                            'USD Spent',
+                            style: TextStyle(color: Colors.grey, fontSize: 15),
+                          )
+                        ],
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(
+              height: 20,
+            ),
             Stack(
               children: <Widget>[
                 AspectRatio(
@@ -136,9 +152,13 @@ class _LineChartSample2State extends State<LineChartSample2> {
                 ),
               ],
             ),
-            SizedBox(height: 10,),
-            Text('Devives power consumption',style: TextStyle(color: Colors.white,fontSize: 20),),
-
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              'Devives power consumption',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
             Expanded(
               child: ListView.builder(
                 itemCount: devices.length,

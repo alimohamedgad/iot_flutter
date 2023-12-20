@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant/color_manager.dart';
+import '../../core/constant/color_manager.dart';
 import '../widgets/custom_button.dart';
 
 class VerticalBoxList extends StatelessWidget {
@@ -166,7 +166,8 @@ class _BoxState extends State<VirticalBox> {
                   Container(
                     height: 100,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(bottomRight: Radius.circular(20)),
+                      borderRadius:
+                          BorderRadius.only(bottomRight: Radius.circular(20)),
                       child: Image.asset(
                         widget.url,
                       ),

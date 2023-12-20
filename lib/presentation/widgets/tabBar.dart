@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled6/constant/color_manager.dart';
+import 'package:untitled6/core/constant/color_manager.dart';
 
 import 'package:untitled6/presentation/screens/devices_screen.dart';
 import 'package:untitled6/presentation/screens/rooms_screens.dart';
@@ -27,33 +27,21 @@ class _TabBarPageState extends State<TabBarPage>
     super.dispose();
   }
 
-
-
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Color(0xff141415),
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xff141415),
-title: Center(child: Text('Devives')),
+        title: Center(child: Text('Devives')),
         leading: Icon(Icons.arrow_back_ios_new_rounded),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: Icon(Icons.search),
           )
-          
         ],
-
       ),
       body: SingleChildScrollView(
         child: Padding(

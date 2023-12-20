@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-import '../../constant/utils.dart';
-
+import '../../core/constant/utils.dart';
 
 class ProfileListItem extends StatelessWidget {
   final IconData icon;
@@ -31,9 +30,8 @@ class ProfileListItem extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(kSpacingUnit.w * 1),
-        color:Color(0xFF1D1E23).withOpacity(0.7),
-
-    ),
+        color: Color(0xFF1D1E23).withOpacity(0.7),
+      ),
       child: Row(
         children: <Widget>[
           Icon(
@@ -45,9 +43,7 @@ class ProfileListItem extends StatelessWidget {
           Text(
             this.text,
             style: kTitleTextStyle.copyWith(
-              fontWeight: FontWeight.w500,
-              color: Colors.white
-            ),
+                fontWeight: FontWeight.w500, color: Colors.white),
           ),
           Spacer(),
           if (this.hasNavigation)

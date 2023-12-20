@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:highlight_text/highlight_text.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-import 'package:untitled6/constant/color_manager.dart';
+import 'package:untitled6/core/constant/color_manager.dart';
 
 class SpeechScreen extends StatefulWidget {
   @override
@@ -64,10 +64,8 @@ class _SpeechScreenState extends State<SpeechScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff141415),
-
-
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
-
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButton: AvatarGlow(
         animate: _isListening,
         glowColor: AppColor.primary,
@@ -84,10 +82,11 @@ class _SpeechScreenState extends State<SpeechScreen> {
       body: SingleChildScrollView(
         reverse: true,
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 200,),
+            SizedBox(
+              height: 200,
+            ),
             Container(
               padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 150.0),
               child: TextHighlight(

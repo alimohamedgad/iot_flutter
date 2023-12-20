@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../constant/color_manager.dart';
+import '../../core/constant/color_manager.dart';
 import '../widgets/custom_button.dart';
 
 class RoomsScreen extends StatelessWidget {
@@ -115,9 +115,9 @@ class _BoxState extends State<VirticalBox> {
             child: Text(
               widget.name,
               style: Theme.of(context).textTheme.headline4!.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ),
         ],
